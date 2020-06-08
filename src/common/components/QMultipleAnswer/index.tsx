@@ -122,15 +122,17 @@ export const QMultipleAnswer: React.FC<Props> = ({
     event.persist();
     if (event.target.checked) {
       setSelectedAnswers(values => [...values, event.target.name]);
+      dispatch(saveAnswers(question, [...selectedAnswers, event.target.name]));
     } else {
       setSelectedAnswers([
         ...selectedAnswers.filter(answer => answer !== event.target.name)
       ]);
+      dispatch(
+        saveAnswers(question, [
+          ...selectedAnswers.filter(answer => answer !== event.target.name)
+        ])
+      );
     }
-  };
-
-  const radioOnBlurHandler = () => {
-    dispatch(saveAnswers(question, selectedAnswers));
   };
 
   return (
@@ -167,7 +169,6 @@ export const QMultipleAnswer: React.FC<Props> = ({
                     color="primary"
                     checked={selectedAnswers.includes(choice.Value)}
                     onChange={checkBoxChangeHandler}
-                    onBlur={radioOnBlurHandler}
                     name={choice.Value}
                     disabled={disabled}
                   />

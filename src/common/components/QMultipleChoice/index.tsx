@@ -119,10 +119,7 @@ export const QMultipleChoice: React.FC<Props> = ({
   const radioBoxChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     event.persist();
     setSelectedAnswers([event.target.value]);
-  };
-
-  const radioOnBlurHandler = () => {
-    dispatch(saveAnswers(question, selectedAnswers));
+    dispatch(saveAnswers(question, [event.target.value]));
   };
 
   return (
@@ -154,8 +151,7 @@ export const QMultipleChoice: React.FC<Props> = ({
           name="choices"
           style={{ paddingLeft: '10px' }}
           value={selectedAnswers[0]}
-          onChange={event => radioBoxChangeHandler(event)}
-          onBlur={radioOnBlurHandler}>
+          onChange={event => radioBoxChangeHandler(event)}>
           {question.Choices.map(choice => {
             return (
               <FormControlLabel
