@@ -1,0 +1,14 @@
+{
+  "window.zoomLevel": 1,
+  "workbench.editor.enablePreview": false,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "git.suggestSmartCommit": true,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "boundary",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
