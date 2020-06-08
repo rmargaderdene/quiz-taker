@@ -25,10 +25,10 @@ export const finishQuiz = (
 
     let timeTaken = '';
     if (duration.hours() > 0) {
-      timeTaken = timeTaken + duration.hours() + ' hours';
+      timeTaken = timeTaken + duration.hours() + ' hours ';
     }
     if (duration.minutes() > 0) {
-      timeTaken = timeTaken + duration.minutes() + ' mins';
+      timeTaken = timeTaken + duration.minutes() + ' mins ';
     }
     if (duration.seconds() > 0) {
       timeTaken = timeTaken + duration.seconds() + ' secs';
